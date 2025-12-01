@@ -1,15 +1,18 @@
 import { colors } from '@/constants/theme'
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-
+import { StatusBar, StyleSheet, View } from 'react-native'
+import Animated, { FadeInDown } from 'react-native-reanimated'
 const SpalshScreen
  = () => {
   return (
     <View style={styles.container}>
-      <Text>SpalshScreen
-        
-      </Text>
-    </View>
+      <StatusBar barStyle={'light-content'} backgroundColor={colors.neutral900} />
+      <Animated.Image source={require('../assets/images/splashImage.png')}
+      entering={FadeInDown.duration(700).springify()}
+        style={styles.logo}
+        resizeMode={"contain"}
+      />
+     </View>
   )
 }
 
@@ -23,5 +26,9 @@ const styles = StyleSheet.create({
         alignItems:"center",
         backgroundColor:colors.neutral900
 
-    }
+    },
+     logo:{
+    height: '23%',
+    aspectRatio: 1,
+  }
 })
