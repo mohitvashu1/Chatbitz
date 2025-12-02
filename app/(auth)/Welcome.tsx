@@ -1,3 +1,4 @@
+import Button from '@/components/Button'
 import ScreenWrapper from '@/components/ScreenWrapper'
 import Typo from '@/components/Typo'
 import { colors, spacingX, spacingY } from '@/constants/theme'
@@ -10,10 +11,10 @@ import Animated, { FadeIn } from 'react-native-reanimated'
 const Welcome = () => {
   const router = useRouter()
   return (
-    <ScreenWrapper showPattern={true} bgOpacity={0.5}>
+    <ScreenWrapper showPattern={true} bgOpacity={2}>
       <View style={styles.container}>
         <View style={{ alignItems: 'center'}}>
-          <Typo color={colors.white} size={43} fontWeight={'900'}>Bubbly</Typo>
+          <Typo color={colors.white} size={43} fontWeight={'900'}>Chatbitz</Typo>
         </View>
       <Animated.Image 
         entering={FadeIn.duration(700).springify()}
@@ -32,7 +33,9 @@ const Welcome = () => {
           and family
         </Typo>
       </View>
-      
+       <Button>
+        <Typo>Get Started</Typo>
+       </Button>
       </View>
     </ScreenWrapper>
   )
@@ -50,7 +53,7 @@ const styles = StyleSheet.create({
      backgroundColor: colors.neutral900,
   },
   welcomeImage:{
-    height: verticalScale(300),
+    height: verticalScale(350),
     aspectRatio: 1,
     alignSelf: 'center',
   }
