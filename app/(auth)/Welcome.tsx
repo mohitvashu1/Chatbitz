@@ -33,9 +33,9 @@ const Welcome = () => {
           and family
         </Typo>
       </View>
-       <Button>
-        <Typo>Get Started</Typo>
-       </Button>
+       <Button  onPress={() => router.push('/(auth)/Register')}>
+        <Typo size={23} fontWeight={'bold'}>Get Started</Typo>
+      </Button>
       </View>
     </ScreenWrapper>
   )
